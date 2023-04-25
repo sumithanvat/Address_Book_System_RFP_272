@@ -1,13 +1,44 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book");
+        Scanner scanner = new Scanner(System.in);
 
-        // with use of contact class we create object and store all the values of contact
-        Contacts contacts = new Contacts("Ranjeet", "Kumar", "Ward no 04", "Jabalpur", "MadhyaPradesh","480661", "7777788888","rsingh@gmail.com");
+        System.out.print("Enter first name: ");
+        String firstName = scanner.nextLine();
 
-        // printing all the elements of contact
-        System.out.println(contacts);
+        System.out.print("Enter last name: ");
+        String lastName = scanner.nextLine();
+
+        System.out.print("Enter address: ");
+        String address = scanner.nextLine();
+
+        System.out.print("Enter city: ");
+        String city = scanner.nextLine();
+
+        System.out.print("Enter state: ");
+        String state = scanner.nextLine();
+
+        System.out.print("Enter zip: ");
+        String zip = scanner.nextLine();
+
+        System.out.print("Enter phone number: ");
+        String phoneNumber = scanner.nextLine();
+
+        System.out.print("Enter email: ");
+        String email = scanner.nextLine();
+
+        Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+        AddressBook addressBook = new AddressBook();
+        addressBook.addContact(contact);
+
+        System.out.println("Contact added successfully.");
+        System.out.println(contact);
     }
 }
+
+

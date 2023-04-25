@@ -1,8 +1,10 @@
 package com.bridgelabz;
 
-public class Contacts {
+import java.util.ArrayList;
+
+public class Contact {
     private String firstName, lastName, address, city, state, zipCode, contactNo, email;
-    public Contacts(String firstName, String lastName, String address, String cityName, String stateName, String zipCodeNo, String contact, String emailAddr){
+    public Contact(String firstName, String lastName, String address, String cityName, String stateName, String zipCodeNo, String contact, String emailAddr){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -12,6 +14,10 @@ public class Contacts {
         this.contactNo = contact;
         this.email = emailAddr;
     }
+
+    public static void add(ArrayList<Contact> contacts1) {
+    }
+
     public String getFirstName(){
         return firstName;
     }
