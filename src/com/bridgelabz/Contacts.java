@@ -62,4 +62,8 @@ public class Contacts {
         this.zipCode = zipCode;
     }
 
+    public String toString(){
+        return "Contacts:" + firstName + " " +lastName + " Email "+email +" Address "+ address +" City " +city + " State "+state +" "+ " Contact "+ contactNo +" ZipCode" + zipCode ;
+    }
+
 }
