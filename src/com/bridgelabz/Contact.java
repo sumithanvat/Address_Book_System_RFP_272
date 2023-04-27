@@ -1,9 +1,13 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
-
+/*
+class Contact
+ */
 public class Contact {
     private String firstName, lastName, address, city, state, zipCode, contactNo, email;
+
+    // creating parameterise contractor
     public Contact(String firstName, String lastName, String address, String cityName, String stateName, String zipCodeNo, String contact, String emailAddr){
         this.firstName = firstName;
         this.lastName = lastName;
