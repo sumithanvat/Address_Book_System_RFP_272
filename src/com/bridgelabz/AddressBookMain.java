@@ -15,17 +15,10 @@ public class AddressBookMain {
 
         AddressBookSystem addressbooksystem = new AddressBookSystem();
 
-
-
+        System.out.println("   ");
         addressbooksystem.addDetails();
         addressbooksystem.DisplayDetails();
-        System.out.println("Enter First Name for which you want to modify info: ");
-        String fName = scanner.nextLine();
-        addressbooksystem.editDetails(fName);
-        System.out.println("After Edit Details Are");
-        addressbooksystem.DisplayDetails();
-        System.out.println("Enter First Name to delete");
-
-
+        addressbooksystem.editDetails();
+        addressbooksystem.deleteContact();
     }
 }

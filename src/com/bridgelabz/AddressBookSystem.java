@@ -2,6 +2,7 @@ package com.bridgelabz;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 // creating class AddressBook
@@ -39,20 +40,24 @@ public class AddressBookSystem {
         }
     }
 
-    public void editDetails(String FirstNameSearch) {
+    public void editDetails() {
+        System.out.println("Enter First Name ");
+        String FirstNameSearch = scanner.next();
+        /* String FirstNameSearch to
+         search for first name */
         for (Contacts contacts : contactsDetails) {
             System.out.println("First Name " + contacts.getFirstName());
             if (contacts.getFirstName().equals(FirstNameSearch)) {
                 System.out.println("Enter a No For Edit the Details");
                 System.out.println("""
-                        1 =  First Name
-                        2 = Last Name
-                        3 = Email
-                        4 = Contact No
-                        5 = Address
-                        6 = City
-                        7 = State
-                        8 = Zip Code""");
+                        1 =  First Name\s
+                        2 = Last Name\s
+                        3 = Email\s
+                        4 = Contact No\s
+                        5 = Address\s
+                        6 = City\s
+                        7 = State\s
+                        8 = Zip Code\s""");
                 int edit = scanner.nextInt();
                 System.out.println("Enter value For Update");
                 switch (edit) {
@@ -88,11 +93,26 @@ public class AddressBookSystem {
                         String UpdateZipCode = scanner.next();
                         contacts.setZipCode(UpdateZipCode);
                     }
-                    default -> System.out.println("Enter Correct No");
                 }
             } else {
                 System.out.println("Enter Correct Name");
             }
+            System.out.println("Updated Details: ");
+            DisplayDetails();
         }
+    }
+
+    public void deleteContact() {
+        Iterator<Contacts> removeContact = contactsDetails.iterator();
+        /*  Checking the next element where
+         *   condition holds true till there is single element
+         *   in the List using has next() method
+         */
+        while (removeContact.hasNext()) {
+            Contacts nextElement = removeContact.next();
+            removeContact.remove();
+        }
+        System.out.println("Contact is removed!");
+        DisplayDetails();
     }
 }
